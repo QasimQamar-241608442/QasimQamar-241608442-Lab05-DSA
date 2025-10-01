@@ -1,0 +1,45 @@
+#Task-02 
+class Queue():
+    def __init__(self):
+        self.items = []
+    def enqueue(self, item):
+        self.items.append(item)
+        print(f"Enqueued: {item}")
+
+    def dequeue(self):
+        if self.is_empty():
+            print("List is empty.")
+            return None
+        dequeue_item = self.items.pop(0)
+        print(f"Dequeued: {dequeue_item}")
+        return dequeue_item
+    
+    def front(self):
+        if self.is_empty():
+            print("List is empty.")
+            return None
+        return self.items[0]
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def size(self):
+        return len(self.items)
+
+if __name__ == "__main__":
+    queue = Queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+
+    print(f"Front element is: {queue.front()}")
+    queue.dequeue()
+    queue.dequeue()
+
+    print(f"Queue size after dequeues: {queue.size()}")
+    print(f"Is queue empty? {queue.is_empty()}")
+
+    queue.dequeue()
+    queue.dequeue()
+
+    print(f"Is queue empty now? {queue.is_empty()}")
