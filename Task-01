@@ -1,0 +1,54 @@
+#QASIM QAMAR - 241608442 
+#LAB - 05 Section C
+#DATE - 01-10-2025
+
+
+#TASK 01 
+class Stack() : 
+    def __init__(self):
+        self.items = []
+
+    def push(self,item):
+        self.items.append(item)
+        print(f"Pushed: {item}")
+
+    def pop(self):
+        if self.is_empty():
+            print("List is empty.")
+            return None
+        pop_item = self.items.pop()
+        print(f"Popped: {pop_item}")
+        return pop_item 
+    
+    def peek(self):
+        if self.is_empty():
+            print ("List is empty.")
+            return None
+        return self.items[-1] 
+    
+    def is_empty(self):
+        return len(self.items) == 0 
+    
+    def size(self):
+        return len(self.items) 
+    
+
+if __name__ == "__main__":
+    stack = Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+
+    print(f"Top element is: {stack.peek()}")
+
+    stack.pop()
+    stack.pop()
+
+    print(f"Stack size after pops: {stack.size()}")
+ 
+    print(f"Is stack empty? {stack.is_empty()}")
+
+    stack.pop()   
+    stack.pop()
+
+print(f"Is stack empty now? {stack.is_empty()}")
